@@ -62,7 +62,7 @@ function WindowTable:CreateWindow()
 	Side.Parent = Main
 	Side.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
 	Side.BorderSizePixel = 0
-	Side.Position = UDim2.new(0.329562604, 0, 0.275979549, 0)
+	Side.Position = UDim2.new(-0.000814331695, 0, 0.0011703968, 0)
 	Side.Size = UDim2.new(0, 131, 0, 262)
 
 	TextLabel.Parent = Side
