@@ -30,6 +30,7 @@ function WindowTable:CreateWindow()
 	Main.BorderSizePixel = 0
 	Main.Position = UDim2.new(0.329562604, 0, 0.275979549, 0)
 	Main.Size = UDim2.new(0, 451, 0, 262)
+	Main.Draggable = true
 
 	AllPages.Name = "AllPages"
 	AllPages.Parent = Main
@@ -58,7 +59,7 @@ function WindowTable:CreateWindow()
 	UIListLayout_2.Padding = UDim.new(0, 3)
 
 	Side.Name = "Side"
-	Side.Parent = ScreenGui
+	Side.Parent = Main
 	Side.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
 	Side.BorderSizePixel = 0
 	Side.Position = UDim2.new(0.329562604, 0, 0.275979549, 0)
