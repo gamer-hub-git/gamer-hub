@@ -28,6 +28,8 @@ function WindowTable:CreateWindow()
 	Main.Position = UDim2.new(0.329562604, 0, 0.275979549, 0)
 	Main.Size = UDim2.new(0, 451, 0, 262)
 	Main.Draggable = true
+	Main.Selectable = true
+	Main.Active = true
 
 	AllPages.Name = "AllPages"
 	AllPages.Parent = Main
