@@ -94,7 +94,7 @@ function WindowTable:CreateWindow()
 		UIListLayout.Parent = NewPage
 		UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 		UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-		UIListLayout.Padding = UDim.new(0, 3)
+		UIListLayout.Padding = UDim.new(0, 4)
 		
 		TextButton.Name = tabname
 		TextButton.Parent = Buttons
