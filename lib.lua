@@ -9,14 +9,11 @@ function WindowTable:CreateWindow()
 	local ScreenGui = Instance.new("ScreenGui")
 	local Main = Instance.new("Frame")
 	local AllPages = Instance.new("Frame")
-	local NewPage = Instance.new("ScrollingFrame") --
-	local UIListLayout = Instance.new("UIListLayout") --
 	local UIListLayout_2 = Instance.new("UIListLayout")
 	local Side = Instance.new("Frame")
 	local TextLabel = Instance.new("TextLabel")
 	local Buttons = Instance.new("Frame")
 	local UIListLayout_3 = Instance.new("UIListLayout")
-	local TextButton = Instance.new("TextButton") --
 
 	--Properties:
 
@@ -31,8 +28,6 @@ function WindowTable:CreateWindow()
 	Main.Position = UDim2.new(0.329562604, 0, 0.275979549, 0)
 	Main.Size = UDim2.new(0, 451, 0, 262)
 	Main.Draggable = true
-	Main.Selectable = true
-	Main.Active = true
 
 	AllPages.Name = "AllPages"
 	AllPages.Parent = Main
@@ -40,20 +35,6 @@ function WindowTable:CreateWindow()
 	AllPages.BorderSizePixel = 0
 	AllPages.Position = UDim2.new(0.314855874, 0, 0.034351144, 0)
 	AllPages.Size = UDim2.new(0, 299, 0, 243)
-
-	NewPage.Name = "NewPage"
-	NewPage.Parent = AllPages
-	NewPage.Active = true
-	NewPage.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
-	NewPage.BorderSizePixel = 0
-	NewPage.Position = UDim2.new(-0.00286986888, 0, -0.0026858882, 0)
-	NewPage.Size = UDim2.new(0, 299, 0, 243)
-	NewPage.ScrollBarThickness = 5
-
-	UIListLayout.Parent = NewPage
-	UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-	UIListLayout.Padding = UDim.new(0, 3)
 
 	UIListLayout_2.Parent = AllPages
 	UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -87,15 +68,6 @@ function WindowTable:CreateWindow()
 	UIListLayout_3.HorizontalAlignment = Enum.HorizontalAlignment.Center
 	UIListLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
 	UIListLayout_3.Padding = UDim.new(0, 3)
-
-	TextButton.Parent = Buttons
-	TextButton.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
-	TextButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
-	TextButton.Position = UDim2.new(0.068702288, 0, 0, 0)
-	TextButton.Size = UDim2.new(0, 114, 0, 25)
-	TextButton.Font = Enum.Font.SourceSans
-	TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-	TextButton.TextSize = 14.000
 	
 	local pagesFolder = Instance.new("Folder")
 
@@ -124,6 +96,7 @@ function WindowTable:CreateWindow()
 		UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 		UIListLayout.Padding = UDim.new(0, 3)
 		
+		TextButton.Name = tabname
 		TextButton.Parent = Buttons
 		TextButton.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
 		TextButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
@@ -142,12 +115,12 @@ function WindowTable:CreateWindow()
 			for i,v in next, Buttons:GetChildren() do   -- We get all the elements inside the frame
 				if v:IsA("TextButton") then -- We can't animate UIListLayout, so we check if its a TextButton
 					game.TweenService:Create(v, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-						BackgroundColor3 = Color3.fromRGB(115, 49, 37) -- We animate other Tab Buttons and making the current one seem Checked
+						BackgroundColor3 = Color3.fromRGB(34, 34, 34) -- We animate other Tab Buttons and making the current one seem Checked
 					}):Play()
 				end
 			end
 			game.TweenService:Create(TextButton, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-				BackgroundColor3 = Color3.fromRGB(255, 109, 83) -- We animate other Tab Buttons and making the current one seem Checked
+				BackgroundColor3 = Color3.fromRGB(64, 64, 64) -- We animate other Tab Buttons and making the current one seem Checked
 			}):Play()
 		end)
 	end
