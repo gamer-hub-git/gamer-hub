@@ -28,8 +28,6 @@ function WindowTable:CreateWindow()
 	Main.Position = UDim2.new(0.329562604, 0, 0.275979549, 0)
 	Main.Size = UDim2.new(0, 451, 0, 262)
 	Main.Draggable = true
-	Main.Selectable = true
-	Main.Active = true
 
 	AllPages.Name = "AllPages"
 	AllPages.Parent = Main
@@ -106,6 +104,7 @@ function WindowTable:CreateWindow()
 		TextButton.Size = UDim2.new(0, 114, 0, 25)
 		TextButton.Font = Enum.Font.SourceSans
 		TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+		TextButton.Text = tabname
 		TextButton.TextSize = 14.000
 		TextButton.MouseButton1Click:Connect(function()
 			for i,v in next, pagesFolder:GetChildren() do -- We get all the pages that we added
