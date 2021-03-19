@@ -69,7 +69,7 @@ function WindowTable:CreateWindow()
 	UIListLayout_3.Parent = Buttons
 	UIListLayout_3.HorizontalAlignment = Enum.HorizontalAlignment.Center
 	UIListLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
-	UIListLayout_3.Padding = UDim.new(0, 3)
+	UIListLayout_3.Padding = UDim.new(0.01, 3)
 	
 	local pagesFolder = Instance.new("Folder")
 
@@ -83,6 +83,11 @@ function WindowTable:CreateWindow()
 		local NewPage = Instance.new("ScrollingFrame")
 		local UIListLayout = Instance.new("UIListLayout")
 		local TextButton = Instance.new("TextButton")
+		local elementPadding = Instance.new('UIPadding')
+		
+		elementPadding.Parent = NewPage
+		elementPadding.PaddingRight = UDim.new(0, 5)
+		elementPadding.PaddingTop = UDim.new(0, 5)
 		
 		NewPage.Name = "NewPage"
 		NewPage.Parent = pagesFolder
@@ -96,7 +101,7 @@ function WindowTable:CreateWindow()
 		UIListLayout.Parent = NewPage
 		UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 		UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-		UIListLayout.Padding = UDim.new(0, 4)
+		UIListLayout.Padding = UDim.new(0, 5)
 		
 		TextButton.Name = tabname
 		TextButton.Parent = Buttons
@@ -126,6 +131,29 @@ function WindowTable:CreateWindow()
 				BackgroundColor3 = Color3.fromRGB(64, 64, 64) -- We animate other Tab Buttons and making the current one seem Checked
 			}):Play()
 		end)
+		
+		local ElementHandler = {}
+		
+		function ElementHandler:CreateButton(btnText, callback)
+			btnText = btnText or 'Text Button'
+			callback = callback or function() end
+			
+			local TextButton = Instance.new("TextButton")
+
+			TextButton.Parent = NewPage
+			TextButton.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+			TextButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
+			TextButton.Position = UDim2.new(0.0936454833, 0, 0.0205761325, 0)
+			TextButton.Size = UDim2.new(0, 271, 0, 27)
+			TextButton.AutoButtonColor = false
+			TextButton.Font = Enum.Font.SourceSans
+			TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+			TextButton.TextSize = 14.000
+			TextButton.Text = btnText
+			TextButton.MouseButton1Click:Connnect(function()
+				callback()
+			end)
+		end
 	end
 	
 	return TabHandler
