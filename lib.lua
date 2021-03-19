@@ -150,7 +150,7 @@ function WindowTable:CreateWindow()
 			TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 			TextButton.TextSize = 14.000
 			TextButton.Text = btnText
-			TextButton.MouseButton1Click:Connnect(function()
+			TextButton.MouseButton1Click:Connect(function()
 				callback()
 			end)
 		end
