@@ -154,6 +154,8 @@ function WindowTable:CreateWindow()
 				callback()
 			end)
 		end
+		
+		return ElementHandler
 	end
 	
 	return TabHandler
